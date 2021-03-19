@@ -48,3 +48,18 @@ $THEME->requiredblocks = '';
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 
 $THEME->hidefromselector = false;
+
+// This setting defines the main scss file for our theme to be compiled. We could set it to a static file in the scss folder or to a function which returns the SCSS based on theme settings.
+$THEME->scss = function ($theme) {
+
+    // We need to load the config for our parent theme because that is where the preset setting is defined.
+    $parentconfig = theme_config::load('boost');
+    // Call a function from our parent themes lib.php file to fetch the content of the themes main SCSS file based on it's own config, not ours.
+    return theme_boost_get_main_scss_content($parentconfig);
+};
+
+// This is a function that returns some SCSS as a string to prepend to the main SCSS file.                                          
+$THEME->prescsscallback = 'theme_trainingmoodletheme_get_pre_scss';
+
+// This is a function that returns some SCSS as a string to append to the main SCSS file.                                          
+$THEME->extrascsscallback = 'theme_trainingmoodletheme_get_extra_scss';
