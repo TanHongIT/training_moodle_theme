@@ -5,15 +5,15 @@
 defined('MOODLE_INTERNAL') || die();
 
 // This is the version of the plugin.                                                                                               
-$plugin->version = '2021031800';
+$plugin->version = 2016102100;
 
 // This is the version of Moodle this plugin requires.                                                                              
-$plugin->requires = '2018051700';
+$plugin->requires = 2016070700;
 
 // This is the component name of the plugin - it always starts with 'theme_'                                                        
 // for themes and should be the same as the name of the folder.                                                                     
 $plugin->component = 'theme_trainingmoodletheme';
-
+$plugin->cron = 60 * 60 * 12;
 // This is a list of plugins, this plugin depends on (and their versions).                                                          
 $plugin->dependencies = [
     'theme_boost' => '2016102100'

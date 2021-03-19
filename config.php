@@ -63,3 +63,9 @@ $THEME->prescsscallback = 'theme_trainingmoodletheme_get_pre_scss';
 
 // This is a function that returns some SCSS as a string to append to the main SCSS file.                                          
 $THEME->extrascsscallback = 'theme_trainingmoodletheme_get_extra_scss';
+
+// This is the function that returns the SCSS source for the main file in our theme. We override the boost version because          
+// we want to allow presets uploaded to our own theme file area to be selected in the preset list.                                  
+$THEME->scss = function($theme) {                                                                                                   
+    return theme_trainingmoodletheme_get_main_scss_content($theme);                                                                               
+};
