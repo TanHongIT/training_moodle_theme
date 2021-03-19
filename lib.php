@@ -40,6 +40,6 @@ function theme_trainingmoodletheme_get_main_scss_content($theme)
         // Safety fallback - maybe new installs etc.                                                                                
         $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/preset/default.scss');
     }
-git a
+    
     return $scss;
 }
